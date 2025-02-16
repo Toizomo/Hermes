@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hermes.css">
+    <title>Autorizaciones</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Hermes</h1>
+            <span class="user-id">2847523</span>
+                <h2 class="top-text">AUTORIZACIONES</h2>
+            <div class="navbar">
+                <div class="navbar-item">
+                    <span class="badge">2</span>
+                    Pendientes
+                </div>
+                <div class="navbar-item">Reportes</div>
+                <div class="navbar-item">Lider TIC</div>
+                <div class="username">John Doe</div>
+                
+                <div class="date-selector">
+                    <span>Desde</span>
+                    <span class="icon">&#128197;</span>
+                    <span>&rarr;</span>
+                    <span>Hasta</span>
+                    <span class="icon">&#128197;</span>
+                </div>
+        </div>
+    </header>
+
+    <main>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Usuarios</a></li>
+                <li><a href="#">Equipos</a></li>
+                <li><a href="#">Solicitudes</a></li>
+                <li><a href="#">Autorizar</a></li>
+                <li><a href="#">Autorizaciones</a></li>
+                <li><a href="vencidas1.html">Solicitudes Vencidas</a></li>
+                <li><a href="#">Devoluciones</a></li>
+                <li><a href="#">Salidas</a></li>
+                <li><a href="#">Reportes</a></li>
+            </ul>
+        </nav>
+
+        <section class="content">
+            <div class="filters">
+                <label for="search">Buscar:</label>
+                <input type="text" class="search-bar" placeholder="Buscar">
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Usuarios</th>
+                        <th>Fecha solicitud</th>
+                        <th>Fecha de reserva</th>
+                        <th>Fecha de entrega</th>
+                        <th>Autorizaciones</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ander nano (Instructor)</td>
+                        <td>11/5/2025</td>
+                        <td>18/6/2025</td>
+                        <td>18/6/2025</td>
+                        <td><input type="checkbox"></td>
+                        <td>
+                            <button class="view-details" onclick="showDetails(this, 'Ander nano', 'Instructor', '18/6/2025', '18/6/2025')">👁️</button>
+                            <button onclick="openPrintModal('Ander nano', '11/11/2024', '11/11/2024', '11/11/2024')">📄</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Juan Díaz (Aprendiz)</td>
+                        <td>11/11/2024</td>
+                        <td>11/11/2024</td>
+                        <td>11/11/2024</td>
+                        <td><input type="checkbox" checked></td>
+                        <td>
+                            <button class="view-details" onclick="showDetails(this, 'Ander nano', 'Instructor', '18/6/2025', '18/6/2025')">👁️</button>
+                            <button onclick="openPrintModal('Juan Díaz', '11/11/2024', '11/11/2024', '11/11/2024')">📄</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Pana Jack (Aprendiz)</td>
+                        <td>13/4/2025</td>
+                        <td>18/5/2025</td>
+                        <td>10/6/2025</td>
+                        <td><input type="checkbox"></td>
+                        <td>
+                            <button class="view-details" onclick="showDetails(this, 'Ander nano', 'Instructor', '18/6/2025', '18/6/2025')">👁️</button>
+                            <button onclick="openPrintModal('Pana Jack (Aprendiz)', '11/11/2024', '11/11/2024', '11/11/2024')">📄</button>
+                        </td>
+                    </tr>
+                    <div>
+                    <tr>
+                        <td>Nicolás Garra (Instructor)</td>
+                        <td>11/3/2025</td>
+                        <td>12/5/2025</td>
+                        <td>15/5/2025</td>
+                        <td><input type="checkbox"></td>
+                        <td>
+                            <button class="view-details" onclick="showDetails(this, 'Ander nano', 'Instructor', '18/6/2025', '18/6/2025')">👁️</button>
+                            <button onclick="openPrintModal('Nicolás Garra (Instructor)', '11/11/2024', '11/11/2024', '11/11/2024')">📄</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="pagination">
+                <span>Rows per page: </span>
+                <select>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                </select>
+                <span>1 - 3 of 3</span>
+            </div>
+            <!-- MODAL PARA IMPRIMIR -->
+<div id="printModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closePrintModal()">&times;</span>
+        <h2>Detalles de la Autorización</h2>
+        <p>Usuario: <span id="printUser"></span></p>
+        <p>Fecha de Solicitud: <span id="printSolicitud"></span></p>
+        <p>Fecha de Reserva: <span id="printReserva"></span></p>
+        <p>Fecha de Entrega: <span id="printEntrega"></span></p>
+        <button onclick="window.print()">Imprimir</button>
+    </div>
+</div>
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Detalles</h2>
+        <table>
+            <tr>
+                <td>Tipo de usuario:</td>
+                <td id="userType"></td>
+            </tr>
+            <tr>
+                <td>Instructor:</td>
+                <td id="instructor"></td>
+            </tr>
+            <tr>
+                <td>Fecha de reserva:</td>
+                <td id="reservationDate"></td>
+            </tr>
+            <tr>
+                <td>Fecha de entrega:</td>
+                <td id="deliveryDate"></td>
+            </tr>
+            <tr>
+                <td>Objeto:</td>
+                <td>Equipo</td>
+            </tr>
+            <tr>
+                <td>Cantidad:</td>
+                <td>04</td>
+            </tr>
+        </table>
+        <div class="modal-actions">
+            <button onclick="authorizeRequest()">✔️ Autorizar</button>
+            <button onclick="rejectRequest()">❌ Rechazar</button>
+        </div>
+        <button onclick="closeModal()">Cerrar</button>
+    </div>
+</div>
+<script src="editindex.js"></script>
+</body>
+</html>

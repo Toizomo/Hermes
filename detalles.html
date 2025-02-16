@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventana Emergente</title>
+
+</head>
+<body>
+
+    <h1>Contenido Principal</h1>
+    <img src="eye-icon.png" alt="Ojo" id="eye-icon" style="cursor: pointer;">
+
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <h2>Detalles</h2>
+        <table>
+            <tr>
+                <td>Tipo de usuario</td>
+                <td>Instructor</td>
+                <td>Firmas</td>
+            </tr>
+            <tr>
+                <td>Fecha de reserva</td>
+                <td>10/2000/09</td>
+                <td><button>Autorizar</button></td>
+            </tr>
+            <tr>
+                <td>Fecha de entrega</td>
+                <td>10/2000/09</td>
+                <td><button>Rechazar</button></td>
+            </tr>
+            <tr>
+                <td>Objeto</td>
+                <td>Equipo</td>
+                <td>Serial #6473920</td>
+            </tr>
+            <tr>
+                <td>Cantidad</td>
+                <td>04</td>
+                <td><button class="close-btn">Cerrar</button></td>|
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        document.getElementById('eye-icon').onclick = function() {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        document.querySelector('.close-btn').onclick = function() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        document.getElementById('overlay').onclick = function() {
+            this.style.display = 'none';
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
