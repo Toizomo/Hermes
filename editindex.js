@@ -1,4 +1,4 @@
-// Función para mostrar detalles en un modal
+//Mostrar detalles en un modal
 function showDetails(user, type, reservationDate, deliveryDate) {
     document.getElementById('userType').innerText = type;
     document.getElementById('instructor').innerText = user;
@@ -8,19 +8,19 @@ function showDetails(user, type, reservationDate, deliveryDate) {
     document.getElementById('myModal').style.display = "block";
 }
 
-// Función para cerrar el modal
+//Cerrar el modal
 function closeModal() {
     document.getElementById('myModal').style.display = "none";
 }
 
-// Cierra el modal si se hace clic fuera de él
+//Cierra el modal si se hace clic fuera de él
 window.onclick = function(event) {
     if (event.target == document.getElementById('myModal')) {
         closeModal();
     }
 }
 
-// Función para abrir el modal de impresión
+//Abrir modal de impresión
 function openPrintModal(user, solicitud, reserva, entrega) {
     document.getElementById('printUser').innerText = user;
     document.getElementById('printSolicitud').innerText = solicitud;
@@ -30,7 +30,7 @@ function openPrintModal(user, solicitud, reserva, entrega) {
     document.getElementById('printModal').style.display = "flex";
 }
 
-// Función para cerrar el modal de impresión
+//Cerrar el modal de impresión
 function closePrintModal() {
     document.getElementById('printModal').style.display = "none";
 }

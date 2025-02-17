@@ -16,6 +16,7 @@ header {
 .logo {
     font-size: 24px;
 }
+
 .top-text{
     display: flex;
     align-items: center;
@@ -141,8 +142,12 @@ thead {
 
 th, td {
     padding: 10px;
-    text-align: left;
+    text-align: center;
     border-bottom: 1px solid #ccc;
+}
+
+.no-afectar {
+    text-align: left;
 }
 
 tr:nth-child(even) {
@@ -154,7 +159,7 @@ tr:hover {
 }
 
 td input[type="checkbox"] {
-    transform: scale(1.2);
+    transform: scale(1.5);
 }
 
 td button {
@@ -182,6 +187,7 @@ td button {
     padding: 20px;
     z-index: 1000;
 }
+
 .overlay {
     display: none;
     position: fixed;
@@ -220,6 +226,7 @@ td button {
     font-size: 28px;
     font-weight: bold;
 }
+
 .close:hover,
 .close:focus {
     color: black;
@@ -231,7 +238,6 @@ td button {
     background-color: green;
 }
 
-/* Estilos para el modal */
 .modal {
     display: none; 
     position: fixed;
@@ -246,7 +252,6 @@ td button {
     align-items: center;
 }
 
-/* Contenedor del modal */
 .modal-content {
     background: white;
     padding: 20px;
@@ -258,7 +263,6 @@ td button {
     position: relative;
 }
 
-/* Botón de cerrar */
 .close {
     position: absolute;
     right: 15px;
